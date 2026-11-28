@@ -45,29 +45,29 @@ public:
 	        if (p.empty()) throw invalid_argument("Position cannot be empty.");
 	        position = p;
 	    }
-	    void setJerseyNum(int n) {
-	        if (n < 1 || n > 99) throw invalid_argument("Jersey number must be 1-99.");
-	        jerseyNum = n;
-	    }
-	    void setStatus(string s) {
-	        if (s != "Active" && s != "Injured" && s != "Suspended")
-	            throw invalid_argument("Status must be Active, Injured or Suspended.");
+	void setJerseyNum(int n) {
+	    if (n < 1 || n > 99) throw invalid_argument("Jersey number must be 1-99.");
+	    jerseyNum = n;
+	}
+	void setStatus(string s) {
+	    if (s != "Active" && s != "Injured" && s != "Suspended")
+	        throw invalid_argument("Status must be Active, Injured or Suspended.");
 	        status = s;
-	    }
-	    void addGoals(int g) {
-	        if (g < 0) throw invalid_argument("Goals cannot be negative.");
-	        goals += g;
-	    }
+	}
+	void addGoals(int g) {
+	    if (g < 0) throw invalid_argument("Goals cannot be negative.");
+	    goals += g;
+	}
 
-	    string displayRole() override { return "Player"; }
+	string displayRole() override { return "Player"; }
 
-	    void display() override {
-	        Person::display();
-	        cout << "Position: " << position << endl;
-	        cout << "Jersey: " << jerseyNum << endl;
-	        cout << "Goals: " << goals << endl;
-	        cout << "Status: " << status << endl;
-	    }
+	void display() override {
+		Person::display();
+		cout << "Position: " << position << endl;
+		cout << "Jersey: " << jerseyNum << endl;
+		cout << "Goals: " << goals << endl;
+		cout << "Status: " << status << endl;
+	}
 };
 
 
